@@ -2,19 +2,14 @@ set number
 syntax on
 set t_Co=256
 
-" For Neovim 0.1.3 and 0.1.4
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
- set termguicolors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
 
-" let g:airline_theme='oceanicnext'
-colorscheme monokai_pro
-let g:lightline = {
-      \ 'colorscheme': 'monokai_pro',
-      \ }
+colorscheme onehalfdark
+let g:lightline = { 'colorscheme': 'onehalfdark'}
 set tabstop=2
 set shiftwidth=2
 set autoindent
@@ -23,9 +18,8 @@ set softtabstop=2
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
-"Plug 'tsony-tsonev/nerdtree-git-plugin'
-" Plug 'mhartington/oceanic-next'
-Plug 'phanviet/vim-monokai-pro'
+" Plug 'phanviet/vim-monokai-pro'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
@@ -37,6 +31,9 @@ Plug 'honza/vim-snippets'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
+"TYPESCRIPT SUPPORT
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 filetype plugin indent on
@@ -75,10 +72,6 @@ let g:webdevicons_enable_nerdtree = 1
 
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
-
-"TYPESCRIPT SUPPORT
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 
 " EMMET CONF
 let g:user_emmet_leader_key=','
