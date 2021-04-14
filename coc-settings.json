@@ -6,7 +6,9 @@
     "json",
     "html",
     "javascriptreact",
-    "typescript.tsx"
+    "typescript.tsx",
+    "java",
+    "dart"
   ],
   "eslint.filetypes": [
     "javascript",
@@ -17,3 +19,4 @@
   ],
   "coc.preferences.diagnostic.virtualText": true
 }
+
