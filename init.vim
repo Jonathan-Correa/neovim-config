@@ -9,7 +9,6 @@ set expandtab
 set softtabstop=2
 set clipboard=unnamedplus
 set showcmd
-set showmatch
 set noshowmode
 set rnu
 
