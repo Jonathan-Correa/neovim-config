@@ -1,20 +1,6 @@
-syntax on
-set number
-set t_Co=256
-set encoding=utf-8
-set tabstop=2
-set shiftwidth=2
-set autoindent
-set expandtab
-set softtabstop=2
-set clipboard=unnamedplus
-set showcmd
-set noshowmode
-set rnu
-
-
-
+" PLUGINS
 call plug#begin('~/.config/nvim/plugged')
+Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -39,10 +25,26 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 filetype plugin indent on
 
-colorscheme monokai-phoenix
+" SETTINGS
+syntax on
+set number
+set t_Co=256
+set encoding=utf-8
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+set softtabstop=2
+set clipboard=unnamedplus
+set showcmd
+set noshowmode
+set rnu
+set nowrap
+colorscheme gruvbox
 
 let g:coc_global_extensions = ['coc-java', 'coc-flutter', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
+" KEY BINDINGS
 map <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>:NERDCommenterToggle
 
